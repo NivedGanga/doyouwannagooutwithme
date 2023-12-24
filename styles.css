@@ -1,8 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     background-color: #53cdbd;
 }
 
@@ -27,6 +33,7 @@ body {
     margin-bottom: 0px;
 }
 
+
 .buttons {
     display: flex;
     flex-direction: row;
@@ -37,7 +44,7 @@ body {
 }
 
 .btn {
-    background-color: #FFB6C1;
+    background-color: #1da0a2;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -55,4 +62,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .header_text {
+        font-size: 30px;
+    }
+
+    .gif_container img {
+        width: 80%;
+    }
 }

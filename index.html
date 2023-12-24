@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
@@ -23,15 +25,20 @@
 
                 function moveButton() {
                     var button = document.getElementById('noButton');
-                    var x = Math.random() * (window.innerWidth - button.offsetWidth);
-                    var y = Math.random() * (window.innerHeight - button.offsetHeight);
-
-
-                    x = Math.max(0, Math.min(x, window.innerWidth - button.offsetWidth));
-                    y = Math.max(0, Math.min(y, window.innerHeight - button.offsetHeight));
-
+                    var buttonRect = button.getBoundingClientRect();
+                    button.style.marginLeft = 0;
+                    // Calculate a random position within the screen boundaries
+                    var x = Math.random() * (window.innerWidth - buttonRect.width);
+                    var y = Math.random() * (window.innerHeight - buttonRect.height);
+                    console.log(x, y);
+                    console.log(window.innerWidth - buttonRect.width, window.innerHeight - buttonRect.height);
+                    // Ensure the button stays within the screen boundaries
+                    x = Math.max(0, Math.min(x, window.innerWidth - buttonRect.width));
+                    y = Math.max(0, Math.min(y, window.innerHeight - buttonRect.height));
+                    console.log(x, y);
                     button.style.left = `${x}px`;
                     button.style.top = `${y}px`;
+                    console.log(button.style.left, button.style.top);
                 }
             </script>
         </div>
