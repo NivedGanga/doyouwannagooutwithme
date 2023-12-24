@@ -54,8 +54,15 @@
                 async function nextPage() {
                     var id = generateGuestId();
                     console.log(id);
+                    var currentdate = new Date();
+                    var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                        + (currentdate.getMonth() + 1) + "/"
+                        + currentdate.getFullYear() + " @ "
+                        + currentdate.getHours() + ":"
+                        + currentdate.getMinutes() + ":"
+                        + currentdate.getSeconds();
                     const docRef = await addDoc(collection(firestore, id), {
-                        time: Date.now(),
+                        time: datetime,
                         id: id,
                         noCount: count
                     })
